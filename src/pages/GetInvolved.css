@@ -1,0 +1,166 @@
+/* ===== GI HERO ===== */
+.gi-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.gi-hero__image {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.gi-hero__label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.gi-hero__content .section-title {
+    margin-bottom: 0;
+}
+
+.gi-hero__content .title-accent {
+    margin-bottom: var(--space-lg);
+}
+
+.gi-hero__text {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-sm);
+}
+
+.gi-hero__content .btn {
+    margin-top: var(--space-md);
+}
+
+/* ===== WAYS GRID ===== */
+.gi-ways-section {
+    background: var(--color-bg-alt);
+}
+
+.gi-ways__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+.gi-way-card {
+    background: var(--color-white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.gi-way-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+    transform-origin: left;
+}
+
+.gi-way-card:hover::before {
+    transform: scaleX(1);
+}
+
+.gi-way-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.gi-way-card__icon {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.gi-way-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.gi-way-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+}
+
+.gi-way-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: gap var(--transition-fast);
+}
+
+.gi-way-card__link:hover {
+    gap: 0.7rem;
+}
+
+/* ===== GI CTA ===== */
+.gi-cta {
+    background: var(--color-bg-dark);
+    padding: var(--space-3xl) 0;
+    text-align: center;
+}
+
+.gi-cta h2 {
+    font-size: 2.25rem;
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+}
+
+.gi-cta p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 550px;
+    margin: 0 auto var(--space-xl);
+}
+
+.gi-cta__actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .gi-hero__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .gi-ways__grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gi-cta h2 {
+        font-size: 1.75rem;
+    }
+}
